@@ -1,5 +1,4 @@
 class ArticlesController < ApplicationController
-
   def show
     @article = Article.find(params[:id])
   end
@@ -14,7 +13,7 @@ class ArticlesController < ApplicationController
 
   def edit
     @article = Article.find(params[:id])
-  end 
+  end
 
   def create
     @article = Article.new(params.require(:article).permit(:title, :description)) # Whitelist
@@ -34,7 +33,6 @@ class ArticlesController < ApplicationController
     else
       render :edit
     end
-    
   end
 
   def destroy
